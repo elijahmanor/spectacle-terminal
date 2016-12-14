@@ -13,6 +13,8 @@ $ npm install --save spectacle-terminal
 
 ![](./demo.gif)
 
+[Interactive Demo](http://elijahmanor.github.com/spectacle-terminal)
+
 ## Usage
 
 ```jsx
