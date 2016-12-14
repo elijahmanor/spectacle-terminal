@@ -1,42 +1,56 @@
 {
-  "name": "spectacle-terminal",
-  "version": "0.2.1",
-  "description": "Terminal component that can be used in a spectacle slide deck",
+  "name": "spectacle-boilerplate",
+  "version": "1.0.1",
+  "description": "ReactJS Powered Presentation Framework",
   "main": "lib/index.js",
   "scripts": {
-    "prebuild": "rm -rf lib/",
-    "build": "babel src -d lib",
-    "prepublish": "npm run build"
+    "clean": "rimraf dist",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
+    "lint": "eslint --ext .js,.jsx .",
+    "deploy": "npm run clean & npm run build && surge -p .",
+    "start": "cross-env NODE_ENV=development node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elijahmanor/spectacle-terminal.git"
-  },
-  "keywords": [
-    "spectacle",
-    "terminal"
-  ],
-  "author": "Elijah Manor",
+  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/elijahmanor/spectacle-terminal/issues"
-  },
-  "homepage": "https://github.com/elijahmanor/spectacle-terminal#readme",
-  "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-2": "^6.18.0",
-    "eslint": "^3.12.1",
-    "eslint-config-leankit": "^3.0.0",
-    "spectacle": "^1.2.5"
-  },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "normalize.css": "3.0.3",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "spectacle": "^1.0.0",
+    "spectacle-code-slide": "^0.3.1",
+    "spectacle-terminal": "^0.2.1"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "devDependencies": {
+    "autoprefixer-core": "^6.0.1",
+    "babel-core": "^6.4.0",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.0.1",
+    "babel-preset-stage-0": "^6.3.13",
+    "cross-env": "^1.0.7",
+    "css-loader": "^0.23.0",
+    "eslint": "^1.8.0",
+    "eslint-config-defaults": "^7.1.1",
+    "eslint-plugin-filenames": "^0.1.2",
+    "eslint-plugin-react": "^3.6.3",
+    "express": "^4.13.3",
+    "file-loader": "^0.8.4",
+    "html-loader": "^0.4.0",
+    "is-buffer": "^1.1.1",
+    "markdown-loader": "^0.1.7",
+    "node-libs-browser": "^0.5.3",
+    "raw-loader": "^0.5.1",
+    "react-transform-hmr": "^1.0.4",
+    "rimraf": "^2.4.4",
+    "style-loader": "^0.13.0",
+    "surge": "latest",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.8",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.5.0"
   }
 }

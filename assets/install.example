@@ -1,0 +1,2 @@
+$ npm install --save spectacle
+$ npm install --save spectacle-terminal

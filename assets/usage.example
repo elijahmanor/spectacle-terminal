@@ -1,21 +1,3 @@
-# spectacle-terminal
-
-Terminal component that can be used in a spectacle slide deck
-
-## Install
-
-```
-$ npm install --save spectacle
-$ npm install --save spectacle-terminal
-```
-
-## Demo
-
-![](./demo.gif)
-
-## Usage
-
-```jsx
 import React from "react";
 import { Spectacle, Deck, Slide, Heading } from "spectacle";
 import createTheme from "spectacle/lib/themes/default";
@@ -48,4 +30,3 @@ export default class Presentation extends React.Component {
     );
   }
 }
-```
