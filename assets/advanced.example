@@ -1,0 +1,32 @@
+/* ... more code ... */
+import Typist from "react-typist";
+import Loading from "react-loading";
+
+const cursor = { show: false, blink: true, element: "|", hideWhenDone: false, hideWhenDoneDelay: 1000 };
+
+export default class Presentation extends React.Component {
+  render() {
+    return (
+      <Spectacle theme={ theme }>
+        <Deck transition={ [] } transitionDuration={ 0 } progress="bar">
+          <Slide transition={["spin", "slide"]} bgColor="primary">
+            <Heading size={2} caps fit textColor="tertiary"><code>Advanced Demo</code></Heading>
+            <Text lineHeight={1.5}>Uses react-typist and Try option-m or click buttons</Text>
+            <Terminal title="1. elijahm@elijahm: ~(zsh)" output={ [
+              <Typist cursor={ cursor }>npm test</Typist>,
+              <div style={{ color: "#33B969"}}>TOTAL: 174 SUCCESS</div>,
+              <Typist cursor={ cursor }>rm -rf node_modules && npm install && say "done"</Typist>,
+              [
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Loading type="bars" color="#fff" height="30" width="30" />
+                  <span style={{ marginLeft: "1rem" }}>Installing dependencies...</span>
+                </div>,
+                <div style={{ color: "#33B969"}}>⚡️ Dependencies installed!</div>
+              ] }
+            />
+          </Slide>
+        </Deck>
+      </Spectacle>
+    );
+  }
+}

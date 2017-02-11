@@ -33,6 +33,16 @@ import Interactive from "../assets/interactive";
 
 import CodeSlide from "spectacle-code-slide";
 import Terminal from "spectacle-terminal";
+import Typist from "react-typist";
+import Loading from "react-loading";
+
+const cursor = {
+  show: false,
+  blink: true,
+  element: "|",
+  hideWhenDone: false,
+  hideWhenDoneDelay: 1000
+};
 
 // Require CSS
 require("normalize.css");
@@ -98,6 +108,67 @@ export default class Presentation extends React.Component {
                 <div style={{ color: "#DEC612"}}>Lines        : 52.69% ( 274/520 )</div>
                 <div>================================================================================</div>
               </div>]}
+            />
+          </Slide>
+          <Slide transition={["spin", "slide"]} bgColor="primary">
+            <Heading size={2} caps fit textColor="tertiary"><code>Advanced Demo</code></Heading>
+            <Text lineHeight={1.5}>Uses react-typist and Try option-m or click buttons</Text>
+            <Terminal title="1. elijahm@elijahm: ~(zsh)" output={ [
+              <Typist cursor={ cursor }>npm test</Typist>,
+              <div style={{ color: "#33B969"}}>TOTAL: 174 SUCCESS</div>,
+              <div>
+                <div>=============================== Coverage summary ===============================</div>
+                <div style={{ color: "#DEC612"}}>Statements   : 51.29% ( 278/542 )</div>
+                <div style={{ color: "#EE5057"}}>Branches     : 38.78% ( 95/245 )</div>
+                <div style={{ color: "#EE5057"}}>Functions    : 46.21% ( 61/132 )</div>
+                <div style={{ color: "#DEC612"}}>Lines        : 52.69% ( 274/520 )</div>
+                <div>================================================================================</div>
+              </div>,
+              <Typist cursor={ cursor }>rm -rf node_modules && npm install && say "done"</Typist>,
+              [
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Loading type="bars" color="#fff" height="30" width="30" />
+                  <span style={{ marginLeft: "1rem" }}>Installing dependencies...</span>
+                </div>,
+                <div style={{ color: "#33B969"}}>⚡️ Dependencies installed!</div>
+              ],
+              <Typist cursor={ cursor }>npm i elijahmanor</Typist>,
+              <div>
+                <div>&gt; elijahmanor@1.1.0 postinstall /Users/elijahm/github/devtools-frontend/node_modules/elijahmanor</div>
+                <div>&gt; cat me.json; say 'Elijah Manor says Hello'</div>
+              </div>,
+              <div> { `
+{
+  "name": "Elijah Manor",
+  "priorities": [
+    "Christian", "Family", "Work"
+  ],
+  "work": [
+    "@leankit", "@eggheadio", "@pluralsight"
+  ],
+  "twitter": "@elijahmanor",
+  "tech": [
+    "HTML", "CSS", "JavaScript",
+    "React", "jQuery"
+  ],
+  "titles": [
+    "Microsoft MVP"
+  ]
+}`
+              } </div>,
+              <div> { `
+myproject@ /Users/elijahm/github/react-slides
+└── elijahmanor@1.1.0 
+              ` } </div>
+              ] }
+            />
+          </Slide>
+          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={2} caps textColor="tertiary">Advanced Usage</Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/advanced.example")}
+              margin="20px auto"
             />
           </Slide>
           <Slide transition={["spin", "slide"]} bgColor="tertiary">

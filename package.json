@@ -16,9 +16,11 @@
     "normalize.css": "3.0.3",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-loading": "0.0.9",
+    "react-typist": "^1.0.3",
     "spectacle": "^1.0.0",
     "spectacle-code-slide": "^0.3.1",
-    "spectacle-terminal": "^0.2.1"
+    "spectacle-terminal": "0.3.0"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
