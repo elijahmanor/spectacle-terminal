@@ -1,7 +1,14 @@
 export default {
 	container: {
 		display: "flex",
-		flexDirection: "column"
+		flexDirection: "column",
+	},
+	containerMaximized: {
+		position: "absolute",
+		top: "1rem",
+		right: "1rem",
+		bottom: "3rem",
+		left: "1rem",
 	},
 	header: {
 		position: "relative",
@@ -53,6 +60,13 @@ export default {
 		wordWrap: "normal",
 		lineHeight: "1.5",
 		tabSize: "4",
-		hyphens: "none"
+		hyphens: "none",
+		height: "100%",
+		maxHeight: "400px",
+		overflow: "auto"
+	},
+	mainMaximized: {
+		height: "100%",
+		maxHeight: "none"
 	}
 };
