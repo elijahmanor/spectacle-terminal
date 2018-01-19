@@ -1,4 +1,5 @@
 import React from "react";
+import {array, bool} from "prop-types";
 import classNames from "classnames";
 import style from "./TerminalStyle";
 
@@ -243,7 +244,7 @@ export default class Terminal extends React.Component {
 }
 
 Terminal.propTypes = {
-  output: React.PropTypes.array,
-  showFirstEntry: React.PropTypes.bool,
+  output: array,
+  showFirstEntry: bool,
   isMaximized: false
 };
