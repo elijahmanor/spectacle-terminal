@@ -34,8 +34,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react": "^15.4.1 || ^16.0.0",
+    "react-dom": "^15.4.1 || ^16.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
