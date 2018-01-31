@@ -246,5 +246,9 @@ export default class Terminal extends React.Component {
 Terminal.propTypes = {
   output: array,
   showFirstEntry: bool,
-  isMaximized: false
+  isMaximized: bool
 };
+
+Terminal.defaultProps = {
+  isMaximized: false
+}
