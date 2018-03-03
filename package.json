@@ -6,7 +6,9 @@
   "scripts": {
     "prebuild": "rm -rf lib/",
     "build": "babel src -d lib",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build && rm -rf src",
+    "postpublish": "git checkout -- .",
+    "postinstall": "node -e \"require('fs').stat('lib', function (e, s) { process.exit(e || !s.isDirectory() ? 1 : 0) })\" || npm run build"
   },
   "repository": {
     "type": "git",
